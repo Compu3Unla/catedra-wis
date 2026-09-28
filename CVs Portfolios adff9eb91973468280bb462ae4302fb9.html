@@ -1,0 +1,821 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>CVs / Portfolios</title><meta name="data-notion-page-icon" content="💡"/><link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ctext%20y%3D%22.9em%22%20font-size%3D%2290%22%3E%F0%9F%92%A1%3C%2Ftext%3E%3C%2Fsvg%3E"/><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+	/* Paint a complete callout box on every PDF page fragment. */
+	-webkit-box-decoration-break: clone;
+	box-decoration-break: clone;
+}
+
+/* For default-background callouts, render the border outline. */
+.callout.block-color-default_background {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+/*
+ * Toggles and callouts hold arbitrary content, so they can easily be taller
+ * than a page. They must stay breakable: avoiding breaks inside them makes
+ * Chromium push the whole block onto the next page, which leaves the previous
+ * page mostly empty before every long toggle.
+ */
+details,
+aside {
+	margin: 1.25em 0;
+}
+
+/* Keep a toggle's title on the same page as the start of its content. */
+summary {
+	page-break-after: avoid;
+	break-after: avoid;
+}
+
+/*
+ * Toggle headings render as <h1/h2/h3 style="display:inline-block"> inside
+ * <summary>. Without this reset, the heading's margin-top pushes it below the
+ * ::marker (▼), so the triangle and the title appear on separate lines.
+ */
+summary h1,
+summary h2,
+summary h3,
+summary h4 {
+	margin-top: 0;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding-inline: 0.125rem;
+	padding-block: 0.375rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+/*
+ * Render emoji icons using a ::before pseudo-element to keep the glyph
+ * out of the DOM textContent traversal. This avoids double-rendering icons
+ * in callouts and page titles.
+ * NOTE(slim/html-export-pseudo-icons): I can't tagref this because it will
+ * flag as a duplicate tag after codegen.
+ */
+.icon[data-emoji]::before {
+	content: attr(data-emoji);
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	margin-right: 0.4em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.tab {
+	margin: 1.25em 0;
+	padding-inline: 1rem;
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style><style>@import url('https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex-swap.min.css')</style></head><body><article id="adff9eb9-1973-4682-80bb-462ae4302fb9" class="page sans" data-notion-page-icon="💡"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1522199755839-a2bacb67c546?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 48.4%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon" data-emoji="💡"></span></div><h1 class="page-title" dir="auto">CVs / Portfolios</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><p id="9463eb24-cf77-4c7e-8a1c-9ede67cb323c" class="" dir="auto">Por un lado les dejamos lo que esperamos que hagan en el TP1 para que tengan idea de cómo organizar la información y qué cosas ponerle. Al final de todo les dejamos unos porfolios con mucha magia por si quieren agregar detalles a sus TPs. Para ver todavía más portfolios sin límites les recomendamos las siguientes webs:</p><figure id="b067adfe-363e-496a-b1b5-b8246eaefc32" dir="ltr"><a href="https://www.awwwards.com/websites/?tag=portfolio&amp;technology=css3&amp;category=design-agencies" class="block-color-gray_background bookmark source" data-notion-highlight="gray_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Awwwards - Website Design Inspiration</div><div class="bookmark-description">Discover the best website designs of the world. Awwwards recognizes the talent and effort of the best designers, web developers and digital agencies.</div></div><div class="bookmark-href"><img src="https://www.awwwards.com/favicon.ico" class="icon bookmark-icon"/>https://www.awwwards.com/websites/?tag=portfolio&amp;technology=css3&amp;category=design-agencies</div></div><img src="https://assets.awwwards.com/awards/5b55e609377d2.jpg" class="bookmark-image"/></a></figure><figure id="50365d85-7c95-4bb6-baa7-0561dab992f5" dir="ltr"><a href="https://godly.website/" class="block-color-gray_background bookmark source" data-notion-highlight="gray_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Godly — The best web design on the Internet</div><div class="bookmark-description">Godly is a curation of the best web design inspiration, every day. Browse the best e-commerce websites, portfolio websites, animation websites and more.</div></div><div class="bookmark-href"><img src="https://godly.website/favicon.png" class="icon bookmark-icon"/>https://godly.website/</div></div><img src="https://godly.website/static/app/og.png" class="bookmark-image"/></a></figure><figure id="7c6adda2-e81a-488d-9a6a-216d24c04bb0" dir="ltr"><a href="https://ilovecreatives.com/internet-gems" class="block-color-gray_background bookmark source" data-notion-highlight="gray_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Internet Gems: Modern Website Inspiration — ilovecreatives</div><div class="bookmark-description">A collection of our favorite website designs (portfolio, e-commerce, service, blog, etc.) and what we really like about them (fonts, color, copy, layout). Explore and filter by platform and type!</div></div><div class="bookmark-href"><img src="https://images.squarespace-cdn.com/content/v1/53a9419fe4b00d7a9215bdb6/1573181583557-YNOCYY3IL8G0ME0QOMM6/favicon.ico?format=100w" class="icon bookmark-icon"/>https://ilovecreatives.com/internet-gems</div></div><img src="http://static1.squarespace.com/static/53a9419fe4b00d7a9215bdb6/t/6112f0abd08e9c3291ef51c8/1628631215396/internet-gems-web-inspo-ilovecreatives.jpg?format=1500w" class="bookmark-image"/></a></figure><nav id="7be9c32d-0571-41c7-a4c8-fd39e593c0f8" class="block-color-gray table_of_contents" data-notion-highlight="gray" data-notion-toc="" dir="ltr"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#a1536b91-0c53-44fb-bd99-df231a3dabdf">Currículum</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#8412beca-79c7-4b33-a40e-6eabd1837086">Portfolio</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#fdb55811-b275-4e8f-b399-83be925734da">Portfolios mágicos </a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#4532ff0c-83a5-43ce-982a-d1d5316b620b">Trabajos destacados </a></div></nav><hr id="e61cfd9c-4b4a-4273-bbf2-ee823bd35812" dir="auto"/><h2 id="a1536b91-0c53-44fb-bd99-df231a3dabdf" class="" dir="auto">Currículum</h2><hr id="79dfe70c-b253-4c70-a7bd-dc6e68b521e8" dir="auto"/><p id="f548c58e-da15-4f84-8e1b-be958f120087" class="" dir="auto">No miren las animaciones, no las vamos a usar todavía. Traten de enfocarse en la forma de esquematizar la información, los datos, o los estilos de diseños y paletas de colores . Recuerden que sólo pedimos un solo html para la primer entrega, si quieren agregarles más esperen para futuras entregas.</p><figure id="f1e95f0b-5f08-4b81-9dac-98573b31cb74" dir="ltr"><a href="https://iamliu.com/" class="block-color-yellow_background bookmark source" data-notion-highlight="yellow_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Wewe.LIU - [:zh]新锐的自由设计师[:en]A Great Designer Engaded in Digital[:]</div><div class="bookmark-description">他曾就职于 Razorfish Shanghai 电子商务部，在此担任艺术总监一职，在电子商务领域中拥有丰富经验。之后，他还加入了国际领先的管理咨询公司 Infosys Lodestone，在此担任 UI&amp;UX 首席设计顾问，为客户提供全面且专业的 UI与UX 咨询。不仅如此，他还擅长平面设计、插画设计、动画设计与前端开发等。</div></div><div class="bookmark-href">https://iamliu.com/</div></div><img src="https://iamliu.com/wp-content/themes/iamliu/thumb.jpg" class="bookmark-image"/></a></figure><figure id="40d4751d-41e4-4e0f-92aa-2568856f85cc" dir="ltr"><a href="https://connormurphy.design/" class="block-color-gray_background bookmark source" data-notion-highlight="gray_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Connor Murphy | Home</div><div class="bookmark-description">I&#x27;m Connor, a digital designer based in Denver ⛰ About I&#x27;m currently working with the fine folks @ Shopify, but have limited availibility for freelance. When I&#x27;m not designing, you can catch me outside exploring, hiking Colorado&#x27;s famous peaks, searching for the best Hefeweizens, or complaining about Denver&#x27;s pizza.</div></div><div class="bookmark-href"><img src="https://connormurphy.design/assets/favicon/favicon.ico" class="icon bookmark-icon"/>https://connormurphy.design/</div></div><img src="https://connormurphy.design/assets/img/social-share.jpg" class="bookmark-image"/></a></figure><div id="15ff927f-0eb2-440c-ac85-4af56560a33a" class="column-list" data-notion-column-list="" dir="auto"><div id="110055f9-ed52-4b26-8f52-2b72e3cac05e" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><figure id="9c324452-acf6-4516-a05f-916787bee3d5" dir="ltr"><a href="https://eamonnlavelle.com/index.html" class="block-color-blue_background bookmark source" data-notion-highlight="blue_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Work :: Eamonn Day Lavelle</div><div class="bookmark-description">Hi, I&#x27;m Eamonn Day Lavelle I work as a product designer for Ex Ordo, in Galway City. We build conference software that is used by some of the top institutes in the world. Below are some side projects. View Projects</div></div><div class="bookmark-href"><img src="https://eamonnlavelle.com/favicon.ico" class="icon bookmark-icon"/>https://eamonnlavelle.com/index.html</div></div></a></figure></div><div id="57b2b024-a6b4-4c37-a1ac-7d9b2f312c4a" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><figure id="0406a219-fe57-41b4-a5fd-5bbe588a52cd" dir="ltr"><a href="http://www.hareeshlive.com/" class="block-color-red_background bookmark source" data-notion-highlight="red_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">UI UX designer</div></div><div class="bookmark-href"><img src="http://www.hareeshlive.com/assets/img/touch/chrome-touch-icon.png" class="icon bookmark-icon"/>http://www.hareeshlive.com/</div></div></a></figure></div></div><figure id="ea12b8aa-9127-4ff4-976c-f71c4641fd76" dir="ltr"><a href="https://pencilhtml5.netlify.app/index.html" class="block-color-yellow_background bookmark source" data-notion-highlight="yellow_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Pencil- Virtual Business Card CV Resume HTML Template</div><div class="bookmark-description">desc</div></div><div class="bookmark-href"><img src="https://pencilhtml5.netlify.app/assets/images/favicon.png" class="icon bookmark-icon"/>https://pencilhtml5.netlify.app/index.html</div></div></a></figure><figure id="426368a7-4312-4ae0-b32d-f6ab67173916" dir="ltr"><a href="https://www.dotmick.com/about" class="block-color-gray_background bookmark source" data-notion-highlight="gray_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">About - Mickael Larcheveque</div><div class="bookmark-description">My name is Mickaël Larchevêque and I am a Designer and Leader based in London, UK. Former Creative Director at Amazon with more than 17 years of experience, I am currently working at Dalziel &amp; Pow where I have focused for the last 5 years on Digital Experiences in the physical world.</div></div><div class="bookmark-href"><img src="https://www.dotmick.com/favicon.ico" class="icon bookmark-icon"/>https://www.dotmick.com/about</div></div><img src="https://www.dotmick.com/wp-content/uploads/2021/02/Portrait_bw_64c.png" class="bookmark-image"/></a></figure><figure id="fa29c646-2425-43f7-a5fb-b13189bbdd9b" dir="ltr"><a href="https://flayks.com/about" class="block-color-blue_background bookmark source" data-notion-highlight="blue_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">About * Flayks - Digital Designer &amp; Art Director</div><div class="bookmark-description">I&#x27;m Félix Péault, an independent Senior Digital Designer and Art Director with many years of experience around the world. Currently based in France.</div></div><div class="bookmark-href"><img src="https://flayks.com/images/favicon.jpg" class="icon bookmark-icon"/>https://flayks.com/about</div></div><img src="https://cdn.sanity.io/images/physnt2g/production/bdff0a8cde2c23a6e67d242f646d5408adf96c75-1200x630.jpg?w=1200&amp;h=630&amp;q=90&amp;auto=format" class="bookmark-image"/></a></figure><figure id="115d711d-79ac-4991-a155-5899c26b6fdf" dir="ltr"><a href="https://lydiaamaruch.com/about" class="block-color-gray_background bookmark source" data-notion-highlight="gray_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">about myself</div><div class="bookmark-description">So, I decided to study Advertising and Public Relations at the University of Malaga. In 2014 I went to Belgium with Erasmus Scolarship. This experience opened my mind and made me find my way.</div></div><div class="bookmark-href"><img src="https://lydiaamaruch.com/apple-touch-icon.png" class="icon bookmark-icon"/>https://lydiaamaruch.com/about</div></div><img src="https://lydiaamaruch.com/img/lydiaamaruch.jpg" class="bookmark-image"/></a></figure><figure id="8720a1b5-374c-4299-b465-021222ff16c8" dir="ltr"><a href="https://weareosm.com/" class="block-color-yellow_background bookmark source" data-notion-highlight="yellow_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">We Are OSM ☀️ Software Development Services | OSM</div><div class="bookmark-description">Software development services tailored to your business needs. We strive to help businesses achieve exceptional growth. We are OSM.</div></div><div class="bookmark-href"><img src="https://weareosm.com/wp-content/uploads/2020/10/cropped-cropped-osmweb-02-32x32_d76182e42477161b1d24615bba137f7f-192x192.png" class="icon bookmark-icon"/>https://weareosm.com/</div></div><img src="https://weareosm.com/wp-content/uploads/2020/03/osmweb-02.png" class="bookmark-image"/></a></figure><p id="ed78e55d-47de-4f57-a1ad-0e3114ddfadb" class="" dir="auto">
+</p><h2 id="8412beca-79c7-4b33-a40e-6eabd1837086" class="" dir="auto">Portfolio</h2><hr id="1126a9ce-0130-447d-a66e-8b3d53ecdc78" dir="auto"/><p id="39c1f19f-2883-43da-9d93-a92c86efa53f" class="" dir="auto">Sección dedicada al segundo TP para analizar cómo se pueden llegar a esquematizar los portfolios con varias páginas</p><figure id="c57a9fc6-e073-4649-91da-612d59f31f9e" dir="ltr"><a href="https://ztandesign.com/" class="block-color-orange_background bookmark source" data-notion-highlight="orange_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Ze Tan Portfolio Website</div><div class="bookmark-description">Hi, I&#x27;m Ze, I am a visual designer with 6 years of experience conceptualizing and crafting digital experiences, specializing in design strategy, UI/UX design, and prototyping with a solid background in interface design and interactive design.</div></div><div class="bookmark-href"><img src="https://ztandesign.com/images/favicon.png" class="icon bookmark-icon"/>https://ztandesign.com/</div></div><img src="https://i.ibb.co/1TQTC7p/web-image.jpg" class="bookmark-image"/></a></figure><figure id="d41a203d-740c-481e-bb80-ab7c221feb88" dir="ltr"><a href="https://toboggang.com/" class="block-color-blue_background bookmark source" data-notion-highlight="blue_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://toboggang.com/</div></div></a></figure><figure id="f886148d-2403-411a-ab30-774fb72579a8" dir="ltr"><a href="https://www.luchohler.com/" class="block-color-gray_background bookmark source" data-notion-highlight="gray_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Luc Hohler | Graphiste - Webdesigner - Développeur front-end</div><div class="bookmark-description">Passionné par le design dans toutes ses formes je conjugue technique et créativité pour développer des univers visuels efficaces et complets sur tous types de supports. De la conception graphique à l&#x27;intégration des pages, de l&#x27;hébergement à la maintenance du site Internet, du développement du site à son optimisation pour le référencement naturel.</div></div><div class="bookmark-href"><img src="https://www.luchohler.com/img/favicon.png" class="icon bookmark-icon"/>https://www.luchohler.com/</div></div><img src="https://www.luchohler.com/img/luchohler.jpg" class="bookmark-image"/></a></figure><div id="ea88b80e-fecb-4e54-884c-a2802dda4357" class="column-list" data-notion-column-list="" dir="auto"><div id="10b7cb4a-7fa5-4ed4-8bae-c81b42df019c" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><figure id="c4708ab4-217b-4079-b648-a74eded9b231" dir="ltr"><a href="https://byjayciemota.com/" class="block-color-purple_background bookmark source" data-notion-highlight="purple_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">By Jaycie Mota | Web Designer &amp; Developer</div><div class="bookmark-description">Enjoy an imaginative portfolio showcasing the works of Jaycie Mota - a web designer and front-end developer based in South Jersey.</div></div><div class="bookmark-href"><img src="https://byjayciemota.com/favicon-16x16.png" class="icon bookmark-icon"/>https://byjayciemota.com/</div></div></a></figure></div><div id="746aaf7c-ad45-402a-bcd6-12b32a1c8070" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><figure id="5a2539c1-deed-4fa0-9810-20894e4698e5" dir="ltr"><a href="https://lydiaamaruch.com/" class="block-color-blue_background bookmark source" data-notion-highlight="blue_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div><div class="bookmark-description">Hi, my name is Lydia Amaruch. Ever since I was a child, I have always been passionate to create, illustrate and photograph everything around me. So, I decided to study Advertising and Public Relations at the University of Malaga. In 2014 I went to Belgium with Erasmus Scolarship.</div></div><div class="bookmark-href"><img src="https://lydiaamaruch.com/apple-touch-icon.png" class="icon bookmark-icon"/>https://lydiaamaruch.com/</div></div></a></figure></div></div><figure id="95734df4-4b25-4565-90c7-707bc628b5dc" dir="ltr"><a href="https://www.delvearchitects.com/" class="block-color-teal_background bookmark source" data-notion-highlight="teal_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Delve Architects</div><div class="bookmark-description">Delve is a young, vibrant architecture and design practice based in South London, focussed on working on all scales of projects, from community engagement, to interiors and one off houses, through to educational projects.</div></div><div class="bookmark-href"><img src="https://assets.website-files.com/5e32efc406e9501e39e42735/5e32efc406e950e64de4277b_Favicon.png" class="icon bookmark-icon"/>https://www.delvearchitects.com/</div></div><img src="https://assets.website-files.com/5e32efc406e9501e39e42735/5eb2de85ce03efba9c355ab7_DelveWebsitemockup.png" class="bookmark-image"/></a></figure><figure id="1e8d4d4f-0cd8-449a-b181-7fde738d29c2" dir="ltr"><a href="http://milikuo.com/" class="block-color-brown_background bookmark source" data-notion-highlight="brown_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Mili Kuo - Interaction Designer / Developer</div><div class="bookmark-description">Rocket is one of the best things that happened in my life. He is a mix of Golden Retriever and American Eskimo, an unexpectedly amazing combination. He is not with me anymore, but I miss him all the time.</div></div><div class="bookmark-href"><img src="http://milikuo.com/favicon.ico" class="icon bookmark-icon"/>http://milikuo.com/</div></div><img src="http://milikuo.com/img/footer/icon.png" class="bookmark-image"/></a></figure><figure id="62264342-3abf-45a9-8bd4-99164c8bdda5" dir="ltr"><a href="https://www.elizabethylin.com/" class="block-color-purple_background bookmark source" data-notion-highlight="purple_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">👑 Elizabeth Lin: Designer &amp; Aspiring Princess!</div><div class="bookmark-description">elizabeth is a designer &amp; aspiring princess. design at X, lambda school. previously khan academy and sfpc 2018. uc berkeley, computer science 2014. design is a party.</div></div><div class="bookmark-href"><img src="https://www.elizabethylin.com/favicon.png" class="icon bookmark-icon"/>https://www.elizabethylin.com/</div></div><img src="http://www.elizabethylin.com/thumbnail-alt.png" class="bookmark-image"/></a></figure><h2 id="fdb55811-b275-4e8f-b399-83be925734da" class="" dir="auto">Portfolios mágicos </h2><hr id="c06d9500-4e15-4ba1-890d-75dee8bcc70b" dir="auto"/><p id="7a406c9d-a00d-4eaa-bf1b-a916dab6415c" class="" dir="auto">Todos estos portfolios tienen más herramientas de las que les damos en el TP1 y que no es momento de que las apliquen. Nuestra recomendación es que tomen de estas sugerencias cosas como la forma de esquematizar la información o ver cómo funcionan las paletas de colores. Esta selección la hicimos porque, más allá de que les pedimos algo simple, funcional, y útil en la proximidad de sus vidas laborales, puede servirles una vez terminada la cursada para armarse algo más elaborado.</p><p id="a80fa3e9-efa5-481f-9693-1237cd890aaa" class="" dir="auto">
+</p><figure id="514a1fd8-e911-4a5f-bf05-60ca531301da" dir="ltr"><a href="https://www.debuut.studio/" class="block-color-teal_background bookmark source" data-notion-highlight="teal_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Studio Debuut * Branding &amp; Design Deventer</div><div class="bookmark-description">Debuut - Door strategie en design helpen we jouw bedrijf om te groeien. Met een nuchtere mentaliteit werken we samen aan een duidelijke vertaling van jouw identiteit. We zetten je zichtbaar op het podium om je merkverhaal te delen en te verbinden met mensen. Kritisch, eerlijk en met oprechte interesse.</div></div><div class="bookmark-href">https://www.debuut.studio/</div></div><img src="https://assets.website-files.com/613f08fdafce94711c8677da/61d8596346d4e1aa94559e64_Debuut_share_image.png" class="bookmark-image"/></a></figure><figure id="34e7be63-3c3b-48f7-9cc2-827578ff742f" dir="ltr"><a href="https://wodniack.dev/" class="block-color-purple_background bookmark source" data-notion-highlight="purple_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Antoine Wodniack / Senior Front-End Developer</div><div class="bookmark-description">I started with Dreamweaver, played with Flash and ActionScript, did back end dev from scratch, worked with all kind of CMS, focused on creative dev, worked on 123+ projects , ran Waaark studio, won a few awards , and keep learning. I work in collaboration with Web Designers to integrate their designs flawlessly with a nice touch of animation.</div></div><div class="bookmark-href"><img src="https://wodniack.dev/icons/favicon.ico" class="icon bookmark-icon"/>https://wodniack.dev/</div></div><img src="https://wodniack.dev/static/site.jpg" class="bookmark-image"/></a></figure><figure id="0120b735-acb3-42e6-8477-887af7bac8c4" dir="ltr"><a href="https://www.matt-rogers.co.uk/" class="block-color-teal_background bookmark source" data-notion-highlight="teal_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Matt Rogers | Web designer | Creative Director</div><div class="bookmark-description">British designer with a focus on brand design, web design and Webflow websites.</div></div><div class="bookmark-href"><img src="https://uploads-ssl.webflow.com/616d6b69b6b2fcf7d77a44c8/61b0d58fb79d322572af6c0c_vv32.png" class="icon bookmark-icon"/>https://www.matt-rogers.co.uk/</div></div><img src="https://uploads-ssl.webflow.com/616d6b69b6b2fcf7d77a44c8/616d6b69b6b2fc1a817a4525_matt-rogers-designer-2.jpg" class="bookmark-image"/></a></figure><figure id="e4264dd4-a583-420b-b457-42a8ebfe706f" dir="ltr"><a href="https://decodedadvertising.com/" class="block-color-pink_background bookmark source" data-notion-highlight="pink_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Home - Decoded Advertising</div><div class="bookmark-description">NEWS NEWS NEWS NEWS NEWS NEWS NEWS NEWS NEWS NEWS NEWS NEWS NEWS NEWS NEWS NEWS NEWS NEWS NEWS NEWS NEWS NEWS NEWS NEWS NEWS NEWS NEWS NEWS NEWS NEWS NEWS NEWS NEWS NEWS NEWS NEWS NEWS NEWS NEWS NEWS</div></div><div class="bookmark-href"><img src="https://decodedadvertising.com/favicon.ico" class="icon bookmark-icon"/>https://decodedadvertising.com/</div></div><img src="https://decodedadvertising.com/images/social-share.jpg" class="bookmark-image"/></a></figure><figure id="5dc44492-5157-4abb-92bc-540343573f6d" dir="ltr"><a href="http://vakula.co/" class="block-color-red_background bookmark source" data-notion-highlight="red_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Adel</div></div><div class="bookmark-href">http://vakula.co/</div></div><img src="http://vakula.co/backend/wp-content/uploads/2018/12/intro-bottomnew-1.jpg" class="bookmark-image"/></a></figure><figure id="b56be058-02e9-4c15-9535-3a8c689ea0f2" dir="ltr"><a href="http://eeerik.com/" class="block-color-yellow_background bookmark source" data-notion-highlight="yellow_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">The Preposterous Official Website of Erik Bernacchi</div><div class="bookmark-description">A non-linear journey inside Erik Bernacchi&#x27;s corner of the internet. A world where nothing is appropriate and everything is not as it should be.</div></div><div class="bookmark-href"><img src="http://eeerik.com/icons/favicon.ico" class="icon bookmark-icon"/>http://eeerik.com/</div></div><img src="https://eeerik.com/icons/thumb.jpg" class="bookmark-image"/></a></figure><figure id="69ebcffb-1b07-4c22-8c9b-a86840c5b74a" dir="ltr"><a href="https://chalovak.works/" class="block-color-blue_background bookmark source" data-notion-highlight="blue_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Anton Chalov&#x27;s AD Portfolio</div><div class="bookmark-description">A collection of works created in collaboration with others while working as an Art Director in advertising.</div></div><div class="bookmark-href"><img src="https://rm-content.s3.amazonaws.com/529cac272ec57b92480002dd/upload-4abc01e8-7a32-421b-9880-c91f9e623ed1_144.png" class="icon bookmark-icon"/>https://chalovak.works/</div></div><img src="https://d3n32ilufxuvd1.cloudfront.net/529cac272ec57b92480002dd/824636/screenshot-b7870797-b7ca-4693-8a70-d2f9b8238485_readyscr_1024.jpg" class="bookmark-image"/></a></figure><p id="88b7215e-922d-4aed-be71-b01e56ad996d" class="" dir="auto">
+</p><h2 id="4532ff0c-83a5-43ce-982a-d1d5316b620b" class="" dir="auto">Trabajos destacados </h2><hr id="05f3e07c-3593-48e2-94e3-c7ce03310517" dir="auto"/><p id="9de6b3b8-a7cc-4116-9bb5-db3d048f579b" class="" dir="auto">Les dejamos una selección de trabajos prácticos destacados, ya sea por la prolijidad del código o por alguna particularidad aplicada en el mismo:</p><div id="ac7e7e54-c98c-4303-9006-a4e0c4a07f87" class="column-list" data-notion-column-list="" dir="auto"><div id="565978c6-122e-41e3-9047-b0ba57a14105" style="width:31.25%" class="column" data-notion-column-ratio="0.3125" dir="auto"><figure id="6736d64a-f8dd-4e1b-95ad-db85ad527500" dir="ltr"><a href="https://rociomansilladurante.github.io/tp1_cv/" class="block-color-teal_background bookmark source" data-notion-highlight="teal_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Inicio</div></div><div class="bookmark-href"><img src="https://rociomansilladurante.github.io/tp1_cv/img/favicon.svg" class="icon bookmark-icon"/>https://rociomansilladurante.github.io/tp1_cv/</div></div></a></figure></div><div id="a29500cd-789b-44ab-a8db-d0e7acd44c6c" style="width:68.75%" class="column" data-notion-column-ratio="0.6875" dir="auto"><figure id="6177c761-2f3a-4d65-8e7c-cab50decd556" dir="ltr"><a href="https://github.com/rociomansilladurante/tp1_cv" class="block-color-teal_background bookmark source" data-notion-highlight="teal_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub - rociomansilladurante/tp1_cv</div><div class="bookmark-description">Contribute to rociomansilladurante/tp1_cv development by creating an account on GitHub.</div></div><div class="bookmark-href"><img src="https://github.com/fluidicon.png" class="icon bookmark-icon"/>https://github.com/rociomansilladurante/tp1_cv</div></div><img src="https://opengraph.githubassets.com/6ddf7b53d8d2721ce1993aa7104d21ba43e7ddc97d122db06916b6a1e18e2052/rociomansilladurante/tp1_cv" class="bookmark-image"/></a></figure></div></div><hr id="adab90e8-0953-4cc9-b017-71b91ef00c18" dir="auto"/><div id="785618c0-b886-455b-957f-7d1aaa3697b6" class="column-list" data-notion-column-list="" dir="auto"><div id="769747b1-208b-4aef-872b-cfb35f6a07e6" style="width:31.25%" class="column" data-notion-column-ratio="0.3125" dir="auto"><figure id="32036bff-1758-4e4f-a79d-1e8361116069" dir="ltr"><a href="https://schjaime.github.io/portfolio/" class="block-color-purple_background bookmark source" data-notion-highlight="purple_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">index</div><div class="bookmark-description">Nací en Buenos Aires, Argentina. Tengo dos gatos, información importante. Y mi vida cambió cuando cursé Computación III en la UNLa. Ahora soy una persona más feliz. Me queda mucho para aprender pero el proceso me está gustando.</div></div><div class="bookmark-href"><img src="https://schjaime.github.io/portfolio/img/troste.png" class="icon bookmark-icon"/>https://schjaime.github.io/portfolio/</div></div></a></figure></div><div id="7618b377-eee6-4a17-8794-799719a325ae" style="width:68.75%" class="column" data-notion-column-ratio="0.6875" dir="auto"><figure id="e8a32454-e8b9-41da-a5fc-ef1b4c5bbd37" dir="ltr"><a href="https://github.com/schjaime/portfolio" class="block-color-purple_background bookmark source" data-notion-highlight="purple_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub - schjaime/portfolio</div><div class="bookmark-description">Contribute to schjaime/portfolio development by creating an account on GitHub.</div></div><div class="bookmark-href"><img src="https://github.com/fluidicon.png" class="icon bookmark-icon"/>https://github.com/schjaime/portfolio</div></div><img src="https://opengraph.githubassets.com/470b2b7d673d0218351ca806e6de32eeb405e3b9a3645bb94e24b0935924d3ce/schjaime/portfolio" class="bookmark-image"/></a></figure></div></div><hr id="a3213b83-bd67-4ac7-aafe-91f27cfcb2d2" dir="auto"/><div id="e69d13b7-8497-48c2-928b-e6a233b3d381" class="column-list" data-notion-column-list="" dir="auto"><div id="d523da12-6cdb-4c96-b7c2-bc487eeb4bd3" style="width:16.666666666666664%" class="column" data-notion-column-ratio="0.16666666666666666" dir="auto"><figure id="d1e43d7f-7e48-4860-a6b9-16555de4ecca" dir="ltr"><a href="https://magusquiroga.github.io/cv_quiroga/" class="block-color-yellow_background bookmark source" data-notion-highlight="yellow_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">magustina quiroga</div><div class="bookmark-description">Me llamo María Agustina Quiroga aunque mis amigos me dicen Tini.
+					Nací y vivo en Adrogué, provincia de Buenos Aires: Argentina.</div></div><div class="bookmark-href"><img src="https://magusquiroga.github.io/cv_quiroga/img/logo.svg" class="icon bookmark-icon"/>https://magusquiroga.github.io/cv_quiroga/</div></div></a></figure></div><div id="869ae3bc-2ef9-4a50-aba8-f417ba91c8ed" style="width:20.833333333333336%" class="column" data-notion-column-ratio="0.20833333333333334" dir="auto"><figure id="39e640fc-46cd-41ac-9eec-5232e6909e97" dir="ltr"><a href="https://www.behance.net/gallery/183863293/Portfolio-web-Diseno-web" class="block-color-yellow_background bookmark source" data-notion-highlight="yellow_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Portfolio web / Diseño web</div><div class="bookmark-description">Diseño web/ Portfolio personal.Desarrollo web. Maquetación en FIGMA. Código en HTML, CSS y Js.</div></div><div class="bookmark-href"><img src="https://a5.behance.net/0b86c8063a8ae471169de03f153a2a2ddc262beb/img/site/apple-touch-icon.png?cb=264615658" class="icon bookmark-icon"/>https://www.behance.net/gallery/183863293/Portfolio-web-Diseno-web</div></div><img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/478980183863293.6547bd6a130c6.png" class="bookmark-image"/></a></figure></div><div id="ebea168b-4a11-4d21-8ca5-8c3e1b32cd35" style="width:62.499999999999986%" class="column" data-notion-column-ratio="0.6249999999999999" dir="auto"><figure id="1a568273-7e8b-44a7-81d6-2d0812c1d4e2" dir="ltr"><a href="https://github.com/magusquiroga/cv_quiroga" class="block-color-yellow_background bookmark source" data-notion-highlight="yellow_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub - magusquiroga/cv_quiroga</div><div class="bookmark-description">Contribute to magusquiroga/cv_quiroga development by creating an account on GitHub.</div></div><div class="bookmark-href"><img src="https://github.com/fluidicon.png" class="icon bookmark-icon"/>https://github.com/magusquiroga/cv_quiroga</div></div><img src="https://opengraph.githubassets.com/fd5cde76c67e9df4515fd73ebb019d221b4176c0c06bb4f1c30c22e2b2d875bf/magusquiroga/cv_quiroga" class="bookmark-image"/></a></figure></div></div><hr id="62870968-03b9-4cdb-8d12-58c85094ff33" dir="auto"/><div id="a8b8add1-6546-43a9-a05f-f612f81c5a26" class="column-list" data-notion-column-list="" dir="auto"><div id="79a2cd5d-0b4a-4473-a62f-630e6e719a87" style="width:31.25%" class="column" data-notion-column-ratio="0.3125" dir="auto"><figure id="50887139-877c-4c5a-92c4-55c6760f4866" dir="ltr"><a href="https://ysmlu.github.io/CV-Luana-Perretti/" class="block-color-purple_background bookmark source" data-notion-highlight="purple_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Luana Perretti - CV</div><div class="bookmark-description">Actualmente estoy cursando materias del cuarto año de la carrera. He logrado destacar en la mayoría de mis proyectos, principalmente en diseño editorial e identidad visual. 
+					Además, trabajo como auxiliar administrativo contable en INDAD, un Centro de Día para personas con discapacidad mental.
+					Considero la organización y la responsabilidad como aspectos fundamentales en mis proyectos. Me gusta trabajar en equipo y resolver eficientemente los problemas para alcanzar las metas y objetivos pautados.</div></div><div class="bookmark-href"><img src="https://ysmlu.github.io/CV-Luana-Perretti/img/icono-solapa.svg" class="icon bookmark-icon"/>https://ysmlu.github.io/CV-Luana-Perretti/</div></div></a></figure></div><div id="e7534e4f-07de-4184-b172-298ce69bd4bc" style="width:68.75%" class="column" data-notion-column-ratio="0.6875" dir="auto"><figure id="3cf19dc3-5caa-4c16-9444-2421fafc2b4b" dir="ltr"><a href="https://github.com/ysmlu/CV-Luana-Perretti" class="block-color-purple_background bookmark source" data-notion-highlight="purple_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub - ysmlu/CV-Luana-Perretti</div><div class="bookmark-description">Contribute to ysmlu/CV-Luana-Perretti development by creating an account on GitHub.</div></div><div class="bookmark-href"><img src="https://github.com/fluidicon.png" class="icon bookmark-icon"/>https://github.com/ysmlu/CV-Luana-Perretti</div></div><img src="https://opengraph.githubassets.com/4dc2ff01bb89b7ee227ae193eeea73fa00387a6cb23442f08f64e212948c72ca/ysmlu/CV-Luana-Perretti" class="bookmark-image"/></a></figure></div></div><hr id="042f5934-68c3-42d0-b424-5f8b0d9ef8b9" dir="auto"/><div id="fff95104-b7ba-8007-acf9-d05cd6eb264c" class="column-list" data-notion-column-list="" dir="auto"><div id="58e7fc16-a3fc-48d9-b822-ce1127138844" style="width:31.25%" class="column" data-notion-column-ratio="0.3125" dir="auto"><figure id="786d317b-27aa-481d-af22-79ee1ddcfd0f" dir="ltr"><a href="https://rominapanzardo.github.io/tp2-portfolio/" class="block-color-blue_background bookmark source" data-notion-highlight="blue_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Romina Panzardo</div><div class="bookmark-description">Mi aventura en el diseño comenzó mucho antes de que pudiera identificarla como tal. De chica, ya
+                    era parte del mundo de las manualidades, creando manualidades con papel hasta
+                    complejos collages que contaban historias. La edición de fotos vino después, como
+                    un descubrimiento que amplió mi horizonte creativo. Al estudiar diseño gráfico
+                    encuentro en cada proyecto una oportunidad para sumergirme en nuevos
+                        desafíos,explorar diferentes perspectivas y perfeccionar mis habilidad para
+                    comunicar como tambien misherramientas.</div></div><div class="bookmark-href"><img src="https://rominapanzardo.github.io/tp2-portfolio/favicon.svg" class="icon bookmark-icon"/>https://rominapanzardo.github.io/tp2-portfolio/</div></div></a></figure></div><div id="fff95104-b7ba-8045-82ef-c0ef0c05e603" style="width:68.75%" class="column" data-notion-column-ratio="0.6875" dir="auto"><figure id="2e59c6ae-df7d-4cc7-9eb3-0ac07661ad96" dir="ltr"><a href="https://github.com/RominaPanzardo/tp2-portfolio" class="block-color-blue_background bookmark source" data-notion-highlight="blue_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub - RominaPanzardo/tp2-portfolio</div><div class="bookmark-description">Contribute to RominaPanzardo/tp2-portfolio development by creating an account on GitHub.</div></div><div class="bookmark-href"><img src="https://github.com/fluidicon.png" class="icon bookmark-icon"/>https://github.com/RominaPanzardo/tp2-portfolio</div></div><img src="https://opengraph.githubassets.com/99a78776187f712a249d21840607e314f186a69d67337613155656c92915afab/RominaPanzardo/tp2-portfolio" class="bookmark-image"/></a></figure></div></div><hr id="390dd6f9-345c-452d-9aab-04ab132eabd0" dir="auto"/><div id="dbf05922-4157-446c-80be-6fb20fa84f8a" class="column-list" data-notion-column-list="" dir="auto"><div id="59c64ce0-d24c-4e1a-bcbf-4ac1921ff877" style="width:31.25%" class="column" data-notion-column-ratio="0.3125" dir="auto"><figure id="796754e9-0859-4f0c-8e81-507cc1154e95" dir="ltr"><a href="https://rocioramiirez.github.io/Rocio-Ramirez-Portafolio/index.html" class="block-color-teal_background bookmark source" data-notion-highlight="teal_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Inicio</div><div class="bookmark-description">CORONADOS DE
+                    
+                    GLORIA  VIVAMOS,
+                    
+                    O JUREMOS CON
+                    
+                    GLORIA MORIR</div></div><div class="bookmark-href"><img src="https://rocioramiirez.github.io/Rocio-Ramirez-Portafolio/favicon.ico" class="icon bookmark-icon"/>https://rocioramiirez.github.io/Rocio-Ramirez-Portafolio/index.html</div></div></a></figure></div><div id="14cd892e-d1b2-4333-a805-09c118a9080e" style="width:68.75%" class="column" data-notion-column-ratio="0.6875" dir="auto"><figure id="e1d8e519-c95e-4538-84ea-77ed1d8047e0" dir="ltr"><a href="https://github.com/RocioRamiirez/Rocio-Ramirez-Portafolio" class="block-color-teal_background bookmark source" data-notion-highlight="teal_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub - RocioRamiirez/Rocio-Ramirez-Portafolio</div><div class="bookmark-description">Contribute to RocioRamiirez/Rocio-Ramirez-Portafolio development by creating an account on GitHub.</div></div><div class="bookmark-href"><img src="https://github.com/fluidicon.png" class="icon bookmark-icon"/>https://github.com/RocioRamiirez/Rocio-Ramirez-Portafolio</div></div><img src="https://opengraph.githubassets.com/75c47f63863bd8a5d0dfc28c75ed127935102ba2728273ebbcc360e27b1c4566/RocioRamiirez/Rocio-Ramirez-Portafolio" class="bookmark-image"/></a></figure></div></div><hr id="ffc36450-7a1d-4a62-8319-14184c325c69" dir="auto"/><div id="87e73763-a148-45ed-8c74-4d150150201c" class="column-list" data-notion-column-list="" dir="auto"><div id="14de41b8-f45b-4265-bee5-edf8577aa87c" style="width:31.25%" class="column" data-notion-column-ratio="0.3125" dir="auto"><figure id="1ed71fa0-7b05-4478-b68b-9eeaa6382381" dir="ltr"><a href="https://ssilvix.github.io/Silvina/sobre-mi.html" class="block-color-pink_background bookmark source" data-notion-highlight="pink_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">DG | Silvina Sánchez</div><div class="bookmark-description">¡Hola! Mi nombre es Silvina pero me dicen Silvix! Soy Diseñadora Gráfica Junior e Ilustradora, resido en Buenos Aires, Argentina. Si te interesa darle vida a tus ideas de una manera creativa, estás en el lugar indicado!</div></div><div class="bookmark-href"><img src="https://ssilvix.github.io/Silvina/img/icons/favicon.svg" class="icon bookmark-icon"/>https://ssilvix.github.io/Silvina/sobre-mi.html</div></div></a></figure></div><div id="4e7cfddf-3aac-4044-bdba-51911f59b8d7" style="width:68.75%" class="column" data-notion-column-ratio="0.6875" dir="auto"><figure id="92e5d17d-e1fd-4b80-9858-c553ca2ac892" dir="ltr"><a href="https://github.com/SSilvix/Silvina" class="block-color-pink_background bookmark source" data-notion-highlight="pink_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub - SSilvix/Silvina</div><div class="bookmark-description">Contribute to SSilvix/Silvina development by creating an account on GitHub.</div></div><div class="bookmark-href"><img src="https://github.com/fluidicon.png" class="icon bookmark-icon"/>https://github.com/SSilvix/Silvina</div></div><img src="https://opengraph.githubassets.com/9e1c5ad64a4ad50a1309c11c225fbb40c40cd241a2da9e9e4b821db747b03d71/SSilvix/Silvina" class="bookmark-image"/></a></figure></div></div><hr id="a3a11361-db1b-44dd-8118-4555d83c41c6" dir="auto"/><div id="16eae54e-8822-4445-8764-5ed1f7c44001" class="column-list" data-notion-column-list="" dir="auto"><div id="d64555c2-8599-448b-bc66-2cafe73edca9" style="width:31.25%" class="column" data-notion-column-ratio="0.3125" dir="auto"><figure id="4a05cd4c-29f0-468c-abcf-a4083777eb43" dir="ltr"><a href="https://lulutrama.github.io/tramalourdes/index.html" class="block-color-teal_background bookmark source" data-notion-highlight="teal_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Trama Lourdes</div></div><div class="bookmark-href"><img src="https://lulutrama.github.io/tramalourdes/img/favicon.svg" class="icon bookmark-icon"/>https://lulutrama.github.io/tramalourdes/index.html</div></div></a></figure></div><div id="bfd14e49-d6d3-47bb-a35e-1d9d23d26572" style="width:68.75%" class="column" data-notion-column-ratio="0.6875" dir="auto"><figure id="7b0977c7-a1dd-4a67-8668-62002dea5c72" dir="ltr"><a href="https://github.com/lulutrama/tramalourdes" class="block-color-teal_background bookmark source" data-notion-highlight="teal_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub - lulutrama/tramalourdes</div><div class="bookmark-description">Contribute to lulutrama/tramalourdes development by creating an account on GitHub.</div></div><div class="bookmark-href"><img src="https://github.com/fluidicon.png" class="icon bookmark-icon"/>https://github.com/lulutrama/tramalourdes</div></div><img src="https://opengraph.githubassets.com/c3dcec2c21e9e6ffad66e1be14e5e156ef044e5b40b5e3f8be3d847d4e1e5a35/lulutrama/tramalourdes" class="bookmark-image"/></a></figure></div></div><hr id="32ec4424-0ce9-4d37-b35d-6f4443bcc537" dir="auto"/><div id="d9cb8d1a-8fee-45ba-9c69-465494d2422f" class="column-list" data-notion-column-list="" dir="auto"><div id="02c03411-330d-4b3e-a126-efaa17613d78" style="width:31.25%" class="column" data-notion-column-ratio="0.3125" dir="auto"><figure id="9bdb074f-ba4e-4033-b3f2-e98f19b9f8b5" dir="ltr"><a href="https://gonza-01.github.io/tp2-porfolio-avalosgonzalo/" class="block-color-gray_background bookmark source" data-notion-highlight="gray_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Avalos Gonzalo Porfolio</div><div class="bookmark-description">¡Hola! Soy un diseñador gráfico de Buenos Aires, Argentina. A la hora de diseñar, me gusta encontrar soluciones prácticas que colaboren con las ideas del cliente a la par de mi trabajo.</div></div><div class="bookmark-href"><img src="https://gonza-01.github.io/tp2-porfolio-avalosgonzalo/gonza_favicon.ico" class="icon bookmark-icon"/>https://gonza-01.github.io/tp2-porfolio-avalosgonzalo/</div></div></a></figure></div><div id="5916d8f5-ab8a-4b95-911f-1fa4413001c4" style="width:68.75%" class="column" data-notion-column-ratio="0.6875" dir="auto"><figure id="481d9641-81be-4b6c-987f-3e8194d345d0" dir="ltr"><a href="https://github.com/Gonza-01/tp2-porfolio-avalosgonzalo" class="block-color-gray_background bookmark source" data-notion-highlight="gray_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub - Gonza-01/tp2-porfolio-avalosgonzalo</div><div class="bookmark-description">Contribute to Gonza-01/tp2-porfolio-avalosgonzalo development by creating an account on GitHub.</div></div><div class="bookmark-href"><img src="https://github.com/fluidicon.png" class="icon bookmark-icon"/>https://github.com/Gonza-01/tp2-porfolio-avalosgonzalo</div></div><img src="https://opengraph.githubassets.com/be396a9543e768939dc8269d30fdedf68ded1db1303ab943c9b16bb0db1f8ef1/Gonza-01/tp2-porfolio-avalosgonzalo" class="bookmark-image"/></a></figure></div></div><hr id="73e0b814-f9f2-47e0-a1a8-39ec172d5bb8" dir="auto"/><div id="fff95104-b7ba-808c-9c7f-d7650ed40572" class="column-list" data-notion-column-list="" dir="auto"><div id="35f63351-268d-422e-92e2-5f65a271bd59" style="width:31.25%" class="column" data-notion-column-ratio="0.3125" dir="auto"><figure id="2c71d449-a377-40c5-a1bf-6559cfb5abec" dir="ltr"><a href="https://fadadiaz.github.io/fatima_diaz_curriculum_compu3/" class="block-color-orange_background bookmark source" data-notion-highlight="orange_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Fátima Daniela Díaz | Diseñadora Junior</div><div class="bookmark-description">¡Hola! Soy Fátima, estudiante de Diseño y Comunicación Visual, ubicada en Buenos Aires.</div></div><div class="bookmark-href"><img src="https://fadadiaz.github.io/fatima_diaz_curriculum_compu3/img/logos/favicon.ico" class="icon bookmark-icon"/>https://fadadiaz.github.io/fatima_diaz_curriculum_compu3/</div></div></a></figure></div><div id="a8ee2091-697d-4cb0-b70e-70d891527bf2" style="width:68.75%" class="column" data-notion-column-ratio="0.6875" dir="auto"><figure id="3a00cfe6-3036-4eb2-98e2-9dcedb703636" dir="ltr"><a href="https://github.com/fadadiaz/fatima_diaz_curriculum_compu3" class="block-color-orange_background bookmark source" data-notion-highlight="orange_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub - fadadiaz/fatima_diaz_curriculum_compu3</div><div class="bookmark-description">Contribute to fadadiaz/fatima_diaz_curriculum_compu3 development by creating an account on GitHub.</div></div><div class="bookmark-href"><img src="https://github.com/fluidicon.png" class="icon bookmark-icon"/>https://github.com/fadadiaz/fatima_diaz_curriculum_compu3</div></div><img src="https://opengraph.githubassets.com/f79b1d08c6b49832776d98bf72a9c9dccd7ffc845d6b3179a0f06214c0641f37/fadadiaz/fatima_diaz_curriculum_compu3" class="bookmark-image"/></a></figure></div></div><hr id="3272837b-8efd-401b-9b6a-1b69504142a5" dir="auto"/><div id="3b187f72-20b1-472d-88c8-c593db8b03f4" class="column-list" data-notion-column-list="" dir="auto"><div id="fff95104-b7ba-8079-84d5-cdd3eb93f263" style="width:31.25%" class="column" data-notion-column-ratio="0.3125" dir="auto"><figure id="626d028a-6970-4b82-a32b-2a58006d029b" dir="ltr"><a href="https://giuliana-61011424.github.io/20241c_computacionIII_curriculum/index.html" class="block-color-purple_background bookmark source" data-notion-highlight="purple_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Giuliana Belardo</div><div class="bookmark-description">Soy Giuliana, diseñadora gráfica y comunicadora visual. Trabajo con emprendedores y dueños de PyMES transformando sus ideas en diseños que fidelicen a sus clientes y los destaquen de la competencia. Te puedo ayudar con Branding, Diseño Web, UX/UI, Redes Sociales, Diseño Editorial y Packaging.</div></div><div class="bookmark-href"><img src="https://giuliana-61011424.github.io/20241c_computacionIII_curriculum/img/favicon-bp.png" class="icon bookmark-icon"/>https://giuliana-61011424.github.io/20241c_computacionIII_curriculum/index.html</div></div></a></figure></div><div id="57b87327-8409-4610-94a8-27826ea1e108" style="width:68.75%" class="column" data-notion-column-ratio="0.6875" dir="auto"><figure id="18cc4f5a-d2e4-4215-86aa-d1eac58751c7" dir="ltr"><a href="https://github.com/Giuliana-61011424/20241c_computacionIII_curriculum" class="block-color-purple_background bookmark source" data-notion-highlight="purple_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub - Giuliana-61011424/20241c_computacionIII_curriculum</div><div class="bookmark-description">Contribute to Giuliana-61011424/20241c_computacionIII_curriculum development by creating an account on GitHub.</div></div><div class="bookmark-href"><img src="https://github.com/fluidicon.png" class="icon bookmark-icon"/>https://github.com/Giuliana-61011424/20241c_computacionIII_curriculum</div></div><img src="https://opengraph.githubassets.com/cc71a68100dedec5fd606f4aa67d59933b0f5f66e46f69f7ce0efb0d784e951e/Giuliana-61011424/20241c_computacionIII_curriculum" class="bookmark-image"/></a></figure></div></div><hr id="20695104-b7ba-802b-b0ad-d7d05f8d8fbf" dir="auto"/><div id="20695104-b7ba-8004-b501-c27e9d6558fd" class="column-list" data-notion-column-list="" dir="auto"><div id="20695104-b7ba-80ac-be33-ca8f711fb2b9" style="width:31.25%" class="column" data-notion-column-ratio="0.3125" dir="auto"><figure id="20695104-b7ba-8094-8953-cfb3f6514595" dir="ltr"><a href="https://miloz-jpg.github.io/Gularte-Portfolio/index.html" class="block-color-pink_background bookmark source" data-notion-highlight="pink_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Miloz.DG</div><div class="bookmark-description">Orgullosamente de Argentina. Nómade, creativa, amo las texturas raras y las letras. ¡Te invito a conocerme!</div></div><div class="bookmark-href"><img src="https://miloz-jpg.github.io/Gularte-Portfolio/img/favicon.ico" class="icon bookmark-icon"/>https://miloz-jpg.github.io/Gularte-Portfolio/index.html</div></div></a></figure></div><div id="20695104-b7ba-80f5-9e81-fb8388f638e9" style="width:68.75%" class="column" data-notion-column-ratio="0.6875" dir="auto"><figure id="20695104-b7ba-807c-a235-d4edcd44701f" dir="ltr"><a href="https://github.com/Miloz-jpg/Gularte-Portfolio" class="block-color-pink_background bookmark source" data-notion-highlight="pink_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub - Miloz-jpg/Gularte-Portfolio</div><div class="bookmark-description">Contribute to Miloz-jpg/Gularte-Portfolio development by creating an account on GitHub.</div></div><div class="bookmark-href"><img src="https://github.com/fluidicon.png" class="icon bookmark-icon"/>https://github.com/Miloz-jpg/Gularte-Portfolio</div></div><img src="https://opengraph.githubassets.com/4b752257c58cbbd590defcf91f41e25246636824610053ecc7f5a6412efc200c/Miloz-jpg/Gularte-Portfolio" class="bookmark-image"/></a></figure></div></div><hr id="20695104-b7ba-805f-bbae-e83798110b3a" dir="auto"/><div id="20695104-b7ba-805b-be08-d374b1f036e9" class="column-list" data-notion-column-list="" dir="auto"><div id="20695104-b7ba-8035-979a-d077b3007894" style="width:31.25%" class="column" data-notion-column-ratio="0.3125" dir="auto"><figure id="20695104-b7ba-808c-862a-fe76fac2c6ac" dir="ltr"><a href="https://delfinafiel.github.io/delfinafiel-curriculum/index.html" class="block-color-teal_background bookmark source" data-notion-highlight="teal_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">delfina ariana fiel | currículum</div><div class="bookmark-description">Mi nombre es Delfina y soy estudiante avanzada de la carrera de Diseño y Comunicación Visual en la Universidad Nacional de Lanús, BS.AS., y como la ansiedad de gana me encuentro trabajando como diseñadora gráfica junior de manera freelance desde hace 2 años. A los 5 años fui a mi primer taller de dibujo y pintura, cosas que sigo haciendo hasta el día de hoy y que incorporo a mis trabajos de manera digital. No creo estar equivocada en decir que esa fue la raíz de mi amor por el diseño.</div></div><div class="bookmark-href"><img src="https://delfinafiel.github.io/delfinafiel-curriculum/img/favicon.svg" class="icon bookmark-icon"/>https://delfinafiel.github.io/delfinafiel-curriculum/index.html</div></div></a></figure></div><div id="20695104-b7ba-8008-8bc6-d1c9c8fd66f4" style="width:68.75%" class="column" data-notion-column-ratio="0.6875" dir="auto"><figure id="20695104-b7ba-80ff-a842-ccf3782c4383" dir="ltr"><a href="https://github.com/delfinafiel/delfinafiel-curriculum" class="block-color-teal_background bookmark source" data-notion-highlight="teal_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub - delfinafiel/delfinafiel-curriculum</div><div class="bookmark-description">Contribute to delfinafiel/delfinafiel-curriculum development by creating an account on GitHub.</div></div><div class="bookmark-href"><img src="https://github.com/fluidicon.png" class="icon bookmark-icon"/>https://github.com/delfinafiel/delfinafiel-curriculum</div></div><img src="https://opengraph.githubassets.com/0c1bc6ac372e3823ee6b104cc4c977220a4bceda620aab36827a8f9034a274bc/delfinafiel/delfinafiel-curriculum" class="bookmark-image"/></a></figure></div></div><hr id="20695104-b7ba-802e-8a2e-c14a64924c52" dir="auto"/><div id="20695104-b7ba-80f6-9e55-f3b26ec5c9a5" class="column-list" data-notion-column-list="" dir="auto"><div id="20695104-b7ba-806c-840b-f25af14f0a15" style="width:31.25%" class="column" data-notion-column-ratio="0.3125" dir="auto"><figure id="20695104-b7ba-803a-8442-e9292cac8d15" dir="ltr"><a href="https://maraquintana.github.io/Quintana-cv/index.html" class="block-color-purple_background bookmark source" data-notion-highlight="purple_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Quintana Portfolio | Inicio</div><div class="bookmark-description">Soy Mara Quintana, aunque tengo diversos apodos. Estudiante de diseño y comunicación visual, en la universidad nacional de Lanús desde el año 2020, época en la que se disparo una pandemia mundial.</div></div><div class="bookmark-href"><img src="https://maraquintana.github.io/Quintana-cv/img/favicon2.ico" class="icon bookmark-icon"/>https://maraquintana.github.io/Quintana-cv/index.html</div></div></a></figure></div><div id="20695104-b7ba-80e5-8954-d239a239037c" style="width:68.75%" class="column" data-notion-column-ratio="0.6875" dir="auto"><figure id="20695104-b7ba-8092-851e-dfc8d75be292" dir="ltr"><a href="https://github.com/MaraQuintana/Quintana-cv" class="block-color-purple_background bookmark source" data-notion-highlight="purple_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub - MaraQuintana/Quintana-cv</div><div class="bookmark-description">Contribute to MaraQuintana/Quintana-cv development by creating an account on GitHub.</div></div><div class="bookmark-href"><img src="https://github.com/fluidicon.png" class="icon bookmark-icon"/>https://github.com/MaraQuintana/Quintana-cv</div></div><img src="https://opengraph.githubassets.com/e017d560f718029906f5ff44de5832ac4d9ad7d6a5ad14ef174a134f015927a0/MaraQuintana/Quintana-cv" class="bookmark-image"/></a></figure></div></div><hr id="20695104-b7ba-8072-9cec-c0739296ab09" dir="auto"/><div id="20695104-b7ba-80c1-9466-fb9035ce9c56" class="column-list" data-notion-column-list="" dir="auto"><div id="20695104-b7ba-8066-b66b-c5758ff621ca" style="width:31.25%" class="column" data-notion-column-ratio="0.3125" dir="auto"><figure id="20695104-b7ba-8037-a6fb-ffec095a0cbb" dir="ltr"><a href="https://analuz20unla.github.io/portfolio/" class="block-color-yellow_background bookmark source" data-notion-highlight="yellow_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Ana Acuña</div><div class="bookmark-description">Mi nombre es Ana, y como diseñadora gráfica me dedico a crear piezas visuales que transforman ideas en historias únicas.</div></div><div class="bookmark-href">https://analuz20unla.github.io/portfolio/</div></div></a></figure></div><div id="20695104-b7ba-806e-abb7-cab3396c6a3a" style="width:68.75%" class="column" data-notion-column-ratio="0.6875" dir="auto"><figure id="20695104-b7ba-80fd-aade-e59bd6f46f4e" dir="ltr"><a href="https://github.com/analuz20unla/portfolio" class="block-color-yellow_background bookmark source" data-notion-highlight="yellow_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub - analuz20unla/portfolio: Tp3 de Computación 3</div><div class="bookmark-description">Tp3 de Computación 3. Contribute to analuz20unla/portfolio development by creating an account on GitHub.</div></div><div class="bookmark-href"><img src="https://github.com/fluidicon.png" class="icon bookmark-icon"/>https://github.com/analuz20unla/portfolio</div></div><img src="https://opengraph.githubassets.com/445af1497b66347bc8a4a8a06a3c5be65a2196d445188a3ba7f1b9d3b3f1d479/analuz20unla/portfolio" class="bookmark-image"/></a></figure></div></div><hr id="20695104-b7ba-80a2-89a9-ffd9d2151250" dir="auto"/><div id="21695104-b7ba-8099-b821-db51535b1489" class="column-list" data-notion-column-list="" dir="auto"><div id="21695104-b7ba-80e8-be92-cfc15a61fa03" style="width:31.25%" class="column" data-notion-column-ratio="0.3125" dir="auto"><figure id="21695104-b7ba-8020-ad39-cbb4f6ea62e6" dir="ltr"><a href="https://sofitop.github.io/Sofia_Zambrana_TP3/" class="block-color-red_background bookmark source" data-notion-highlight="red_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Sofito Portfolio 2025</div><div class="bookmark-description">and i&#x27;m a graphic designer 
+                    from Argentina living on the 
+                    other side of the world =D</div></div><div class="bookmark-href"><img src="https://sofitop.github.io/Sofia_Zambrana_TP3/img/logo.svg" class="icon bookmark-icon"/>https://sofitop.github.io/Sofia_Zambrana_TP3/</div></div></a></figure></div><div id="21695104-b7ba-8000-9ce8-cf14a7a7516a" style="width:68.75%" class="column" data-notion-column-ratio="0.6875" dir="auto"><figure id="21695104-b7ba-80bf-8e8d-c8f39df874f2" dir="ltr"><a href="https://github.com/sofitop/Sofia_Zambrana_TP3" class="block-color-red_background bookmark source" data-notion-highlight="red_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub - sofitop/Sofia_Zambrana_TP3</div><div class="bookmark-description">Contribute to sofitop/Sofia_Zambrana_TP3 development by creating an account on GitHub.</div></div><div class="bookmark-href"><img src="https://github.com/fluidicon.png" class="icon bookmark-icon"/>https://github.com/sofitop/Sofia_Zambrana_TP3</div></div><img src="https://opengraph.githubassets.com/b65663e5d6903ab13c4e048b172fc481796cb5836d3ca07dda8cdfe88b370b4d/sofitop/Sofia_Zambrana_TP3" class="bookmark-image"/></a></figure></div></div><hr id="21695104-b7ba-80f9-b156-f67c04babfc7" dir="auto"/><div id="21695104-b7ba-80d9-bdb6-d27d11546512" class="column-list" data-notion-column-list="" dir="auto"><div id="21695104-b7ba-80f9-8669-f3dd3b5493a7" style="width:31.25%" class="column" data-notion-column-ratio="0.3125" dir="auto"><figure id="21695104-b7ba-80a4-a8a3-d5ae3bff6c83" dir="ltr"><a href="https://agustinaechav.github.io/tp3_echavarria_agustina/" class="block-color-pink_background bookmark source" data-notion-highlight="pink_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">agustina echavarria</div><div class="bookmark-description">me llamo agustina. soy estudiante de diseño y comunicación visual en la unla. desde que soy muy chiquita (como en la foto) me gusta el arte y todos sus relacionados. también me gustan los gatos, ah y merendar. le tengo fobia a las arañas pero me gusta observarlas desde lejos. pienso que son pequeñas artistas  dentro de la naturaleza, con esas telas hermosas que crean. soy de sagitario, como gachi y pachi, y... perdón. divagué.</div></div><div class="bookmark-href"><img src="https://agustinaechav.github.io/tp3_echavarria_agustina/img/imagenes/favicon.png" class="icon bookmark-icon"/>https://agustinaechav.github.io/tp3_echavarria_agustina/</div></div></a></figure></div><div id="21695104-b7ba-8067-998c-e2e70eeb6527" style="width:68.75%" class="column" data-notion-column-ratio="0.6875" dir="auto"><figure id="21695104-b7ba-8023-937c-cb0d99d06d52" dir="ltr"><a href="https://github.com/agustinaechav/tp3_echavarria_agustina" class="block-color-pink_background bookmark source" data-notion-highlight="pink_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub - agustinaechav/tp3_echavarria_agustina</div><div class="bookmark-description">Contribute to agustinaechav/tp3_echavarria_agustina development by creating an account on GitHub.</div></div><div class="bookmark-href"><img src="https://github.com/fluidicon.png" class="icon bookmark-icon"/>https://github.com/agustinaechav/tp3_echavarria_agustina</div></div><img src="https://opengraph.githubassets.com/df0219a00759568aaf3563b220fb65baeb7469148b6bc9f642098cd36e7c8c76/agustinaechav/tp3_echavarria_agustina" class="bookmark-image"/></a></figure></div></div><hr id="21695104-b7ba-801c-a339-cd9b4bc9c87b" dir="auto"/><div id="21d95104-b7ba-80fa-b4c7-ddb322182fde" class="column-list" data-notion-column-list="" dir="auto"><div id="21d95104-b7ba-805d-bec1-e99e72bb5463" style="width:31.25%" class="column" data-notion-column-ratio="0.3125" dir="auto"><figure id="21d95104-b7ba-80d6-84e7-e6f50d795c23" dir="ltr"><a href="https://celinamolinaro.github.io/C3-Ejercicio-1/" class="block-color-orange_background bookmark source" data-notion-highlight="orange_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Celina Molinaro | Diseñadora Gráfica</div></div><div class="bookmark-href"><img src="https://celinamolinaro.github.io/C3-Ejercicio-1/img/favicon-cm.svg" class="icon bookmark-icon"/>https://celinamolinaro.github.io/C3-Ejercicio-1/</div></div></a></figure></div><div id="21d95104-b7ba-8097-b9fa-fd00cc34c49b" style="width:68.75%" class="column" data-notion-column-ratio="0.6875" dir="auto"><figure id="21d95104-b7ba-8070-8def-f467e426bab2" dir="ltr"><a href="https://github.com/Celinamolinaro/C3-Ejercicio-1" class="block-color-orange_background bookmark source" data-notion-highlight="orange_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub - Celinamolinaro/C3-Ejercicio-1</div><div class="bookmark-description">Contribute to Celinamolinaro/C3-Ejercicio-1 development by creating an account on GitHub.</div></div><div class="bookmark-href"><img src="https://github.com/fluidicon.png" class="icon bookmark-icon"/>https://github.com/Celinamolinaro/C3-Ejercicio-1</div></div><img src="https://opengraph.githubassets.com/be7f45c172d3507429dc578f25addb89d4fc51008799091e2d972385bc3c349d/Celinamolinaro/C3-Ejercicio-1" class="bookmark-image"/></a></figure></div></div><hr id="21d95104-b7ba-80fe-b67e-c439224f49c5" dir="auto"/><div id="21d95104-b7ba-80e5-827d-cc286369744d" class="column-list" data-notion-column-list="" dir="auto"><div id="21d95104-b7ba-80da-a495-d308905bae94" style="width:43.75%" class="column" data-notion-column-ratio="0.4375" dir="auto"><figure id="21d95104-b7ba-8078-81b7-c9aee3a4dbd2" dir="ltr"><a href="https://luciadevoto.github.io/TP3-LuciaDevoto/index.html" class="block-color-teal_background bookmark source" data-notion-highlight="teal_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Lucia Devoto</div><div class="bookmark-description">presentacion de mi portfolio</div></div><div class="bookmark-href"><img src="https://luciadevoto.github.io/TP3-LuciaDevoto/img/favicon.svg" class="icon bookmark-icon"/>https://luciadevoto.github.io/TP3-LuciaDevoto/index.html</div></div></a></figure></div><div id="21d95104-b7ba-80a8-9cd2-e573134c741f" style="width:93.75%" class="column" data-notion-column-ratio="0.9375" dir="auto"><figure id="21d95104-b7ba-8086-b3bc-ef9f244330d2" dir="ltr"><a href="https://github.com/luciadevoto/TP3-LuciaDevoto" class="block-color-teal_background bookmark source" data-notion-highlight="teal_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub - luciadevoto/TP3-LuciaDevoto</div><div class="bookmark-description">Contribute to luciadevoto/TP3-LuciaDevoto development by creating an account on GitHub.</div></div><div class="bookmark-href"><img src="https://github.com/fluidicon.png" class="icon bookmark-icon"/>https://github.com/luciadevoto/TP3-LuciaDevoto</div></div><img src="https://opengraph.githubassets.com/424fbe38428beb8d5349f1fffd505f1b34ff7b24e1077663357bad1f5328f95f/luciadevoto/TP3-LuciaDevoto" class="bookmark-image"/></a></figure></div></div><hr id="21d95104-b7ba-8026-b28d-e74e1b6649ae" dir="auto"/><div id="21d95104-b7ba-80fd-9e15-d93db14964c2" class="column-list" data-notion-column-list="" dir="auto"><div id="21d95104-b7ba-804b-b773-e28aa419dbe7" style="width:31.25%" class="column" data-notion-column-ratio="0.3125" dir="auto"><figure id="21d95104-b7ba-8088-9669-d76bb34e36bb" dir="ltr"><a href="https://inzuny.github.io/Compu3_FabaAlejandro/" class="block-color-gray_background bookmark source" data-notion-highlight="gray_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Faba Alejandro - C.V.</div><div class="bookmark-description">curriculum vitae de alejandro faba</div></div><div class="bookmark-href"><img src="https://inzuny.github.io/Compu3_FabaAlejandro/img/generales/favicon.ico" class="icon bookmark-icon"/>https://inzuny.github.io/Compu3_FabaAlejandro/</div></div></a></figure></div><div id="21d95104-b7ba-80b7-be20-f74801360ee6" style="width:68.75%" class="column" data-notion-column-ratio="0.6875" dir="auto"><figure id="21d95104-b7ba-80a1-9e27-cc0e481b7ce5" dir="ltr"><a href="https://github.com/Inzuny/Compu3_FabaAlejandro" class="block-color-gray_background bookmark source" data-notion-highlight="gray_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub - Inzuny/Compu3_FabaAlejandro</div><div class="bookmark-description">Contribute to Inzuny/Compu3_FabaAlejandro development by creating an account on GitHub.</div></div><div class="bookmark-href"><img src="https://github.com/fluidicon.png" class="icon bookmark-icon"/>https://github.com/Inzuny/Compu3_FabaAlejandro</div></div><img src="https://opengraph.githubassets.com/53df5a2ee8d30d76f515dabb0009514374e49f55cba5cb6a35b85a47476a7bd8/Inzuny/Compu3_FabaAlejandro" class="bookmark-image"/></a></figure></div></div><hr id="21d95104-b7ba-8072-ae0b-f05001b1e6a0" dir="auto"/><div id="21d95104-b7ba-80a0-a235-eaf9eedaf518" class="column-list" data-notion-column-list="" dir="auto"><div id="21d95104-b7ba-80e4-aa33-cb1515588a32" style="width:31.25%" class="column" data-notion-column-ratio="0.3125" dir="auto"><figure id="21d95104-b7ba-8038-a9ee-f8aa1b710e55" dir="ltr"><a href="https://dewtea19.github.io/tp3-portfolio/index.html" class="block-color-teal_background bookmark source" data-notion-highlight="teal_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Rocio Garcia Portfolio</div><div class="bookmark-description">Diseñadora gráfica e ilustradora con más de 4 años de experiencia. Con un enfoque estratégico para el desarrollo de identidad visual, material publicitario y diseño digital.</div></div><div class="bookmark-href"><img src="https://dewtea19.github.io/tp3-portfolio/favicon.svg" class="icon bookmark-icon"/>https://dewtea19.github.io/tp3-portfolio/index.html</div></div></a></figure></div><div id="21d95104-b7ba-80fd-9420-ecf2f5abeed7" style="width:68.75%" class="column" data-notion-column-ratio="0.6875" dir="auto"><figure id="21d95104-b7ba-8081-a28b-fb483d52e6bb" dir="ltr"><a href="https://github.com/Dewtea19/tp3-portfolio" class="block-color-teal_background bookmark source" data-notion-highlight="teal_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub - Dewtea19/tp3-portfolio</div><div class="bookmark-description">Contribute to Dewtea19/tp3-portfolio development by creating an account on GitHub.</div></div><div class="bookmark-href"><img src="https://github.com/fluidicon.png" class="icon bookmark-icon"/>https://github.com/Dewtea19/tp3-portfolio</div></div><img src="https://opengraph.githubassets.com/c92d90428f9c36e7758ed794b371e2a3589be22ba2c37dd2c0eaf0ea78938392/Dewtea19/tp3-portfolio" class="bookmark-image"/></a></figure></div></div><hr id="21d95104-b7ba-808f-ab4b-fa241a3b6c58" dir="auto"/><div id="24795104-b7ba-8035-9fa0-d76ef3e21d31" class="column-list" data-notion-column-list="" dir="auto"><div id="24795104-b7ba-80ac-9784-d13efafd7bb8" style="width:31.25%" class="column" data-notion-column-ratio="0.3125" dir="auto"><figure id="24795104-b7ba-8040-855e-fba3408152c5" dir="ltr"><a href="https://agustinaechav.github.io/tp3_echavarria_agustina/" class="block-color-pink_background bookmark source" data-notion-highlight="pink_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">agustina echavarria</div><div class="bookmark-description">me llamo agustina. soy estudiante de diseño y comunicación visual en la unla. desde que soy muy chiquita (como en la foto) me gusta el arte y todos sus relacionados. también me gustan los gatos, ah y merendar. le tengo fobia a las arañas pero me gusta observarlas desde lejos. pienso que son pequeñas artistas  dentro de la naturaleza, con esas telas hermosas que crean. soy de sagitario, como gachi y pachi, y... perdón. divagué.</div></div><div class="bookmark-href"><img src="https://agustinaechav.github.io/tp3_echavarria_agustina/img/imagenes/favicon.png" class="icon bookmark-icon"/>https://agustinaechav.github.io/tp3_echavarria_agustina/</div></div></a></figure></div><div id="24795104-b7ba-80f2-aa02-e62aa02b777c" style="width:68.75%" class="column" data-notion-column-ratio="0.6875" dir="auto"><figure id="24795104-b7ba-8097-842c-c5c59e82a2a7" dir="ltr"><a href="https://github.com/agustinaechav/tp3_echavarria_agustina" class="block-color-pink_background bookmark source" data-notion-highlight="pink_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub - agustinaechav/tp3_echavarria_agustina</div><div class="bookmark-description">Contribute to agustinaechav/tp3_echavarria_agustina development by creating an account on GitHub.</div></div><div class="bookmark-href"><img src="https://github.com/fluidicon.png" class="icon bookmark-icon"/>https://github.com/agustinaechav/tp3_echavarria_agustina</div></div><img src="https://opengraph.githubassets.com/df0219a00759568aaf3563b220fb65baeb7469148b6bc9f642098cd36e7c8c76/agustinaechav/tp3_echavarria_agustina" class="bookmark-image"/></a></figure></div></div><hr id="24795104-b7ba-8038-8fea-e4419e4d8de1" dir="auto"/><div id="24795104-b7ba-801e-9107-de4d3b54b6a7" class="column-list" data-notion-column-list="" dir="auto"><div id="24795104-b7ba-8004-a141-c6c23e8a0478" style="width:31.25%" class="column" data-notion-column-ratio="0.3125" dir="auto"><figure id="24795104-b7ba-8089-98cb-f4a5ba38b5e7" dir="ltr"><a href="https://miranda578.github.io/mirandaMR-cv/" class="block-color-teal_background bookmark source" data-notion-highlight="teal_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Mirdanda Martinez Ruvira Porfolio</div><div class="bookmark-description">Estudio en la UNLa desde 2022, me encanta abordar el diseño desde un lado conceptual y poder incorporar la gráfica para contar historias. 
+                Descubrí y construí desde lo colectivo mi manera de ver el mundo y entender el diseño como herramienta para proponer soluciones.</div></div><div class="bookmark-href"><img src="https://miranda578.github.io/mirandaMR-cv/img/logo%20svg%20para%20web-14.svg" class="icon bookmark-icon"/>https://miranda578.github.io/mirandaMR-cv/</div></div></a></figure></div><div id="24795104-b7ba-8050-9143-e61534a7b70e" style="width:68.75%" class="column" data-notion-column-ratio="0.6875" dir="auto"><figure id="24795104-b7ba-8007-b212-f5599318cea7" dir="ltr"><a href="https://github.com/miranda578/mirandaMR-cv" class="block-color-teal_background bookmark source" data-notion-highlight="teal_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub - miranda578/mirandaMR-cv: TP1 compu</div><div class="bookmark-description">TP1 compu. Contribute to miranda578/mirandaMR-cv development by creating an account on GitHub.</div></div><div class="bookmark-href"><img src="https://github.com/fluidicon.png" class="icon bookmark-icon"/>https://github.com/miranda578/mirandaMR-cv</div></div><img src="https://opengraph.githubassets.com/14572771dd76cd28c6b097a74eb0247fcdc26b8716d3f29d081e5c4a121d1f11/miranda578/mirandaMR-cv" class="bookmark-image"/></a></figure></div></div><hr id="24795104-b7ba-80ab-a316-fa250df1758c" dir="auto"/><div id="24795104-b7ba-8040-b8af-cc803ce2fcae" class="column-list" data-notion-column-list="" dir="auto"><div id="24795104-b7ba-80d6-98e4-f51b7bd968ec" style="width:31.25%" class="column" data-notion-column-ratio="0.3125" dir="auto"><figure id="24795104-b7ba-80ec-95ea-c8f7cd203b2a" dir="ltr"><a href="https://celinamolinaro.github.io/C3-Ejercicio-1/" class="block-color-orange_background bookmark source" data-notion-highlight="orange_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Celina Molinaro | Diseñadora Gráfica</div></div><div class="bookmark-href"><img src="https://celinamolinaro.github.io/C3-Ejercicio-1/img/favicon-cm.svg" class="icon bookmark-icon"/>https://celinamolinaro.github.io/C3-Ejercicio-1/</div></div></a></figure></div><div id="24795104-b7ba-8072-99ff-c5b6e760a38d" style="width:68.75%" class="column" data-notion-column-ratio="0.6875" dir="auto"><figure id="24795104-b7ba-8032-a992-e8406fb82945" dir="ltr"><a href="https://github.com/Celinamolinaro/C3-Ejercicio-1" class="block-color-orange_background bookmark source" data-notion-highlight="orange_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub - Celinamolinaro/C3-Ejercicio-1</div><div class="bookmark-description">Contribute to Celinamolinaro/C3-Ejercicio-1 development by creating an account on GitHub.</div></div><div class="bookmark-href"><img src="https://github.com/fluidicon.png" class="icon bookmark-icon"/>https://github.com/Celinamolinaro/C3-Ejercicio-1</div></div><img src="https://opengraph.githubassets.com/be7f45c172d3507429dc578f25addb89d4fc51008799091e2d972385bc3c349d/Celinamolinaro/C3-Ejercicio-1" class="bookmark-image"/></a></figure></div></div><hr id="24795104-b7ba-8070-88e0-c70c3bbf1f8c" dir="auto"/><div id="24795104-b7ba-8031-b1f4-f5aae4156829" class="column-list" data-notion-column-list="" dir="auto"><div id="24795104-b7ba-806f-acb7-ff390e927745" style="width:31.25%" class="column" data-notion-column-ratio="0.3125" dir="auto"><figure id="24795104-b7ba-80ea-9d3f-c60cea5c572d" dir="ltr"><a href="https://sofitop.github.io/Sofia_Zambrana_TP3/" class="block-color-red_background bookmark source" data-notion-highlight="red_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Sofito Portfolio 2025</div><div class="bookmark-description">and i&#x27;m a graphic designer 
+                    from Argentina living on the 
+                    other side of the world =D</div></div><div class="bookmark-href"><img src="https://sofitop.github.io/Sofia_Zambrana_TP3/img/logo.svg" class="icon bookmark-icon"/>https://sofitop.github.io/Sofia_Zambrana_TP3/</div></div></a></figure></div><div id="24795104-b7ba-80b8-acf0-eac9fd64a441" style="width:68.75%" class="column" data-notion-column-ratio="0.6875" dir="auto"><figure id="24795104-b7ba-8044-861c-c2796f3b131e" dir="ltr"><a href="https://github.com/sofitop/Sofia_Zambrana_TP3" class="block-color-red_background bookmark source" data-notion-highlight="red_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub - sofitop/Sofia_Zambrana_TP3</div><div class="bookmark-description">Contribute to sofitop/Sofia_Zambrana_TP3 development by creating an account on GitHub.</div></div><div class="bookmark-href"><img src="https://github.com/fluidicon.png" class="icon bookmark-icon"/>https://github.com/sofitop/Sofia_Zambrana_TP3</div></div><img src="https://opengraph.githubassets.com/424a7748c9d58816fc7edd92c526ad67cc7d25413cc15842a85bb683cc329c2c/sofitop/Sofia_Zambrana_TP3" class="bookmark-image"/></a></figure></div></div><hr id="24795104-b7ba-8037-9534-e8e4ea8338d0" dir="auto"/><div id="24795104-b7ba-80ab-b46d-e83f6dc27fab" class="column-list" data-notion-column-list="" dir="auto"><div id="24795104-b7ba-8008-bd55-d8126950f04e" style="width:31.25%" class="column" data-notion-column-ratio="0.3125" dir="auto"><figure id="24795104-b7ba-8088-b7a7-e3a32d0a6dc1" dir="ltr"><a href="https://inzuny.github.io/Compu3_FabaAlejandro/" class="block-color-gray_background bookmark source" data-notion-highlight="gray_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Faba Alejandro - C.V.</div><div class="bookmark-description">curriculum vitae de alejandro faba</div></div><div class="bookmark-href"><img src="https://inzuny.github.io/Compu3_FabaAlejandro/img/generales/favicon.ico" class="icon bookmark-icon"/>https://inzuny.github.io/Compu3_FabaAlejandro/</div></div></a></figure></div><div id="24795104-b7ba-80a5-a0e8-c1150e4cfd1a" style="width:68.75%" class="column" data-notion-column-ratio="0.6875" dir="auto"><figure id="24795104-b7ba-8022-a9af-dfeab57391b1" dir="ltr"><a href="https://github.com/Inzuny/Compu3_FabaAlejandro" class="block-color-gray_background bookmark source" data-notion-highlight="gray_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub - Inzuny/Compu3_FabaAlejandro</div><div class="bookmark-description">Contribute to Inzuny/Compu3_FabaAlejandro development by creating an account on GitHub.</div></div><div class="bookmark-href"><img src="https://github.com/fluidicon.png" class="icon bookmark-icon"/>https://github.com/Inzuny/Compu3_FabaAlejandro</div></div><img src="https://opengraph.githubassets.com/53df5a2ee8d30d76f515dabb0009514374e49f55cba5cb6a35b85a47476a7bd8/Inzuny/Compu3_FabaAlejandro" class="bookmark-image"/></a></figure></div></div><hr id="24795104-b7ba-807f-a025-ea44ea141b4c" dir="auto"/><div id="24795104-b7ba-8003-b1e1-dcd0afad8597" class="column-list" data-notion-column-list="" dir="auto"><div id="24795104-b7ba-8042-a268-e909190c6bc5" style="width:31.25%" class="column" data-notion-column-ratio="0.3125" dir="auto"><figure id="24795104-b7ba-8070-b2fe-cdf9af357cbf" dir="ltr"><a href="https://lul1zarraga.github.io/portfolio/index.html#sobre-mi" class="block-color-orange_background bookmark source" data-notion-highlight="orange_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Portfolio Luciana Lizarraga</div><div class="bookmark-description">Soy estudiante de la carrera de Diseño y Comunicación Visual, con experiencia en la creación de materiales gráficos para impresión y digital, abarcando todo el proceso, desde la conceptualización hasta la materialización. Mi enfoque es desarrollar propuestas visuales que comuniquen eficazmente y generen una experiencia memorable para el espectador.</div></div><div class="bookmark-href"><img src="https://lul1zarraga.github.io/portfolio/img/favicon.png" class="icon bookmark-icon"/>https://lul1zarraga.github.io/portfolio/index.html#sobre-mi</div></div></a></figure></div><div id="24795104-b7ba-807f-ab5f-e155a8ee9691" style="width:68.75%" class="column" data-notion-column-ratio="0.6875" dir="auto"><figure id="24795104-b7ba-805c-9978-fc03fd3df40d" dir="ltr"><a href="https://github.com/camila-png/Porfolio" class="block-color-orange_background bookmark source" data-notion-highlight="orange_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub - camila-png/Porfolio</div><div class="bookmark-description">Contribute to camila-png/Porfolio development by creating an account on GitHub.</div></div><div class="bookmark-href"><img src="https://github.com/fluidicon.png" class="icon bookmark-icon"/>https://github.com/camila-png/Porfolio</div></div><img src="https://opengraph.githubassets.com/96666f35e4a62d577a6dee2f493734ab79137b4170f39f6d9622816ae429e234/camila-png/Porfolio" class="bookmark-image"/></a></figure></div></div><hr id="24795104-b7ba-8068-951a-e6d6e9226267" dir="auto"/><div id="24795104-b7ba-8002-b284-e4d029b21034" class="column-list" data-notion-column-list="" dir="auto"><div id="24795104-b7ba-8070-82c7-d68fc1e493d9" style="width:31.25%" class="column" data-notion-column-ratio="0.3125" dir="auto"><figure id="24795104-b7ba-80be-b411-def929ba499d" dir="ltr"><a href="https://rociomars.github.io/Rocio1/index.html" class="block-color-purple_background bookmark source" data-notion-highlight="purple_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Inicio | rStudio.design | Rocío Silva</div><div class="bookmark-description">portfolio-diseño</div></div><div class="bookmark-href"><img src="https://rociomars.github.io/Rocio1/img/iconos/favicon-32x32.png" class="icon bookmark-icon"/>https://rociomars.github.io/Rocio1/index.html</div></div></a></figure></div><div id="24795104-b7ba-80e9-94a0-e5d45a69318d" style="width:68.75%" class="column" data-notion-column-ratio="0.6875" dir="auto"><figure id="24795104-b7ba-8018-9157-cf0d309c37e0" dir="ltr"><a href="https://github.com/rociomars/Rocio1" class="block-color-purple_background bookmark source" data-notion-highlight="purple_background"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub - rociomars/Rocio1</div><div class="bookmark-description">Contribute to rociomars/Rocio1 development by creating an account on GitHub.</div></div><div class="bookmark-href"><img src="https://github.com/fluidicon.png" class="icon bookmark-icon"/>https://github.com/rociomars/Rocio1</div></div><img src="https://opengraph.githubassets.com/6ccc7582d56c677e7e7c0de894ac4a3d9771a05c9d4061f94d7ebaf06bebcd29/rociomars/Rocio1" class="bookmark-image"/></a></figure></div></div><p id="24795104-b7ba-803d-bd41-f2e12e938f9d" class="" dir="auto">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
