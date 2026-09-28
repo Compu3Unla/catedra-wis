@@ -1,0 +1,241 @@
+/* Variables de color y tipografía */
+:root {
+    --primary-color: #FBF8F2;
+    --accent-color: #001E66;
+    --bg-color: #1F1F1F;
+    --card-bg: #1F1F1F;
+    --text-color: #FBF8F2;
+    --text-muted: #FBF8F2;
+    --border-color: #001E66;
+    --font-main: "Source Sans 3", sans-serif;
+    --font-title: "Source Code Pro", monospace;
+    --max-width: 1080px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Header & Hero */
+.hero-cover {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.cover-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: relative;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+.header-icon {
+    width: 64px;
+    height: 64px;
+    margin-top: -40px;
+    background: #fff;
+    border-radius: 8px;
+    padding: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+.header-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.site-title {
+    font-family: var(--font-title);
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+}
+
+.institution-sub {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.course-title {
+    font-family: var(--font-title);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-style: italic;
+}
+
+/* Navegación */
+.main-nav {
+    background-color: var(--card-bg);
+    border-y: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
+    padding: 0.75rem 0;
+}
+
+.nav-links a {
+    font-family: var(--font-title);
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.nav-links a:hover {
+    background-color: rgba(55, 53, 47, 0.08);
+}
+
+/* Grilla Principal */
+.intro-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+
+.welcome-text h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.welcome-text p {
+    margin-bottom: 1rem;
+}
+
+/* Sidebar */
+.sidebar-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.card-group {
+    background: var(--card-bg);
+    padding: 1.25rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.card-group h4 {
+    font-family: var(--font-title);
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+}
+
+.link-card,
+.social-link {
+    display: block;
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.4rem;
+    border-radius: 6px;
+    background-color: rgba(55, 53, 47, 0.04);
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.link-card:hover,
+.social-link:hover {
+    background-color: rgba(55, 53, 47, 0.09);
+}
+
+.separator {
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    margin: 3rem 0;
+}
+
+/* Trabajos Destacados */
+.featured-projects h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.project-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 600;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border-color);
+    margin-top: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .intro-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        justify-content: space-between;
+    }
+}
